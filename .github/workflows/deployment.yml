@@ -3,9 +3,6 @@ name: Deployment
 on:
   push:
     branches: ["main"]
-    paths:
-      - "*/README.md"
-      - ".github/workflows/deployment.yml"
   workflow_dispatch:
 
 permissions:
