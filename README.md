@@ -19,7 +19,6 @@
 
 ![C4 Modell: Layer 2 - Sensors](./c4/02_sensors.png)
 
-
 ## Datenbank
 
 In unserem Projekt wurde eine robuste Datenbankimplementierung durchgeführt, um die Übertragung und Speicherung von Daten vom Sensor effizient zu verwalten. Die Haupttechnologien, die dabei verwendet wurden, sind [Golang](https://go.dev/) als Programmiersprache, [GORM](https://gorm.io/) als ORM-Framework (Object-Relational Mapping) und [SQLite](https://www.sqlite.org) als Datenbank.
