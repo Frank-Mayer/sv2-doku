@@ -168,7 +168,7 @@ void mqtt_broker_callback(char *topic, byte *payload, unsigned int length) {
 }
 ```
 
-Für das Senden von Daten in unserem Projekt nutzen wir einen nebenläufigen Prozess, auch bekannt als Concurrent Process. Dieser Ansatz ermöglicht es, Daten unabhängig vom Hauptprozesslauf zu senden, was die Effizienz und Reaktionsfähigkeit unseres Systems erheblich verbessert.
+Für das Senden von Daten in unserem Projekt nutzen wir einen nebenläufigen Prozess. Dieser Ansatz ermöglicht es, Daten unabhängig vom Hauptprozesslauf zu senden, was die Effizienz und Reaktionsfähigkeit unseres Systems erheblich verbessert.
 
 Der Prozess arbeitet parallel zum Hauptprozess und nutzt die Fähigkeiten des ESP32, mehrere Aufgaben gleichzeitig zu verwalten. Dies ist ein Schlüsselelement, um unser System zuverlässig und reaktionsschnell zu gestalten, insbesondere in einem IoT-Kontext, wo eine effiziente Kommunikation von entscheidender Bedeutung sein kann.
 
