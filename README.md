@@ -25,39 +25,41 @@
 
 ## Hardware
 
-Zum Hosten der Website, sowie die Verarbeitung und Speicherung der Meßdaten entschlossen wir uns, einen Raspberry Pi zu verwenden, da dieser über außreichend Leistung verfügt, um eine komplexe Single-Page-Webanwendung mit Datenbank zu hosten.
+Für das Hosting unserer Website sowie die Verarbeitung und Speicherung der Messdaten haben wir uns für einen Raspberry Pi entschieden. Dieser bietet ausreichende Leistung, um eine komplexe Single-Page-Webanwendung samt Datenbank effizient zu betreiben.
 
-Zur Steuerung von Sensoren und Aktoren entschieden wir uns für einen ESP32, da dieser Standard für diesen Anwendungsbereich ist. Für seinen Betrieb greifen wir Standard Li-Ionen Zellen zürück.
+Im Bereich der Sensorik und Aktorik fiel unsere Wahl auf den ESP32. Dieser Mikrocontroller ist ein Standard in diesem Anwendungsgebiet und überzeugt durch seine Vielseitigkeit und Zuverlässigkeit. Für die Energieversorgung setzen wir auf bewährte Standard-Li-Ionen-Zellen.
 
-Beide Systeme verfügen außerdem über ein großes Angebot an Ressourcen zur Programmierung.
+Ein wesentlicher Vorteil beider Systeme ist das umfangreiche Angebot an Programmierressourcen, was uns eine flexible und effiziente Entwicklung ermöglicht.
 
-Für den ESP suchten wir nach passenden Sensoren. Ursprünglich wollten wir verschiedene Sensoren verbauen, was wir jedoch ändern mussten.
+In der Anfangsphase unseres Projekts planten wir den Einsatz verschiedener Sensoren in Kombination mit dem ESP32. Im Laufe der Entwicklung mussten wir jedoch Anpassungen vornehmen und uns auf eine Auswahl an Sensoren beschränken, die unseren Anforderungen am besten entsprachen.
 
 <img src="./hardware/image.png" width="40%">
 
-Eine Auflage war es, repräsentativ einen Aktor am ESP über die Netzwerkverbindung steuern zu können. Hierfür wählten wir der Einfachheit halber eine LED.
+Um die Anforderung zu erfüllen, einen Aktor repräsentativ über die Netzwerkverbindung steuern zu können, entschieden wir uns für eine einfache und effektive Lösung: die Verwendung einer LED. Die LED dient als idealer Demonstrator für die Fähigkeit des ESP32, über das Netzwerk Befehle zu empfangen und umzusetzen. Diese Wahl ermöglicht es uns, die Netzwerksteuerung auf eine zugängliche und anschauliche Weise zu demonstrieren, ohne dabei auf komplexere oder kostenintensive Aktorik zurückgreifen zu müssen.
 
 #### Probleme
 
-Leider war der Sensor, den wir als Alternative zur Bestellung bekamen defekt. Aufgrund unserer fehlenden Erfahrung, konnte wir dies aber Anfangs nicht mit Sicherheit sagen. Jedoch konnten wir mit I²C Scanner-Skripten für den ESP keinen Sensor erkennen.
+Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Aufgrund unserer begrenzten Erfahrung im Umgang mit dieser Art von Hardware waren wir anfangs nicht in der Lage, dies mit Sicherheit zu diagnostizieren. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
 
 <img src="./hardware/image-3.png" width="40%">
 
-Wir teilten dies dem Betreuer mit und machten das Gegenangebot, einen DHT22 zu benutzen, die ein Team-Mitglied noch daheim hatte.
+Nachdem wir auf das Problem mit dem defekten Sensor gestoßen waren, informierten wir umgehend unseren Betreuer über die Situation. Um das Projekt weiterhin erfolgreich voranzutreiben, schlugen wir eine alternative Lösung vor: den Einsatz eines DHT22-Sensors, den ein Mitglied unseres Teams zu Hause hatte. Dieser Sensor, bekannt für seine Zuverlässigkeit bei der Messung von Temperatur und Luftfeuchtigkeit, schien eine praktikable und unkomplizierte Alternative zu sein, die es uns ermöglichen würde, das Projekt ohne größere Verzögerungen fortzusetzen.
 
 <img src="./hardware/image-2.png" width="40%">
 
 ### Außenstation
 
-Letzlich planten wir ein minimalistisches Konzept für die Außenstation.
+In der weiteren Planung entschieden wir uns für ein minimalistisches Konzept für die Außenstation. Unser Ziel war es, die Funktionalität zu maximieren, während wir gleichzeitig die Komplexität und die Anzahl der verwendeten Komponenten minimierten. Dieser Ansatz sollte nicht nur die Effizienz und Zuverlässigkeit unserer Außenstation verbessern, sondern auch die Wartung und mögliche Fehlerbehebung vereinfachen. Durch die Konzentration auf wesentliche Elemente wie den zuverlässigen DHT22-Sensor und die effektive Nutzung des ESP32 konnten wir ein schlankes, aber leistungsfähiges System entwickeln, das optimal für den vorgesehenen Einsatz im Freien geeignet ist.
 
 <img src="./hardware/image-1.png" width="40%">
 
-Wir bauten einen Protoyp, den wir gegen eine Mosquitto Docker Container testenen, bevor wir mit der einrichtung des Pis begannen.
+Im nächsten Schritt bauten wir einen Prototyp unserer Außenstation. Bevor wir mit der Einrichtung und Konfiguration des Raspberry Pis begannen, entschieden wir uns dafür, den Prototyp gegen einen Mosquitto MQTT Broker in einem Docker-Container zu testen. Diese Vorgehensweise ermöglichte es uns, die Kommunikation und Funktionalität unseres Systems unter kontrollierten Bedingungen zu überprüfen.
+
+Durch den Einsatz des Mosquitto Brokers in einem Docker-Container konnten wir eine stabile und flexible Testumgebung schaffen. Dies war besonders wichtig, um sicherzustellen, dass unser Prototyp korrekt mit dem MQTT-Protokoll kommunizieren konnte, ein essenzieller Bestandteil für die zuverlässige Übertragung der Sensordaten und die Steuerung der Aktoren über das Netzwerk. Erst nach erfolgreichen Tests und der Gewährleistung, dass der Prototyp wie erwartet funktionierte, gingen wir zur nächsten Phase über – der Einrichtung und Konfiguration des Raspberry Pi für den Echtbetrieb.
 
 <img src="./hardware/image-4.png" width="40%">
 
-Nachdem alles funktioniert hat, löteten wir zie Komponenten zusammen, sodass wir sie einfach in unser selbstgebautes Gehäuse einsetzen können.
+Nachdem wir erfolgreich bestätigt hatten, dass unser Prototyp wie vorgesehen funktionierte, gingen wir zur nächsten Phase über: dem Löten der Komponenten. Diese Entscheidung folgte dem Ziel, eine robuste und zuverlässige Einheit zu schaffen, die sich einfach in unser selbstgebautes Gehäuse integrieren lässt.
 
 <img src="./hardware/image-5.png" width="40%">
 
@@ -96,9 +98,9 @@ const uint64_t deep_sleep_delay = 60e6;
 const uint loop_delay = 250;
 ```
 
-Der meiste Teil ist aus den Dokumentationen der Libraries adaptiert und in Funktionen verpackt.
+In unserem Projekt haben wir eine effiziente Struktur implementiert, indem wir Code-Teile aus den Bibliotheksdokumentationen adaptiert und in spezifische Funktionen integriert haben.
 
-Da wir zum Spaß auch Morsecode in Echtzeit als on/off commands an den ESP übertragen wollen, entschieden wir uns, für das Lesen und Senden der Sensordaten deinen Thread zu erstellen, wozu wir die xTaskCreate-Funktion des FreeRTOS nutzen.
+Für eine kreative Erweiterung unseres Projekts entschieden wir uns, Morsecode in Echtzeit als On/Off-Befehle an den ESP zu übertragen. Dies stellte uns vor die Herausforderung, die Sensordaten effizient zu lesen und zu senden. Um dies zu bewältigen, haben wir uns für die Erstellung eines separaten Threads entschieden, wobei wir die Funktion xTaskCreate des FreeRTOS nutzen. Diese Entscheidung ermöglichte es uns, eine parallele Verarbeitung zu implementieren, die für die schnelle und zuverlässige Übertragung und Interpretation von Morsesignalen unerlässlich ist
 
 ```c++
 void setup() {
@@ -121,7 +123,9 @@ void loop() {
 }
 ```
 
-Für die Kommunikation muss der ESP neben WiFi ebenso eine Verbindung zu einem MQTT-Broker aufbauen.
+Für unser Projekt ist es entscheidend, dass der ESP32 nicht nur eine WiFi-Verbindung herstellt, sondern auch eine zuverlässige Verbindung zu einem MQTT-Broker aufbaut. MQTT (Message Queuing Telemetry Transport) ist ein leichtgewichtiges und effizientes Protokoll, das speziell für die Kommunikation in IoT-Umgebungen entwickelt wurde. Durch die Einbindung von MQTT in unser System kann der ESP32 effektiv Daten senden und empfangen, was für die Übertragung von Sensordaten und die Steuerung von Aktoren wie der LED über Netzwerkbefehle essentiell ist.
+
+Diese duale Kommunikationsfähigkeit – sowohl über WiFi als auch über MQTT – erweitert die Funktionalität unseres Systems erheblich, indem sie eine flexible und robuste Plattform für die Fernsteuerung und Datenübertragung bereitstellt.
 
 ```c++
 void initializeMQTT() {
@@ -131,7 +135,7 @@ void initializeMQTT() {
 }
 ```
 
-Zum Epfangen der Daten wird eine Callback-Funktion beim broker registriert.
+In unserem Projekt verwenden wir eine Callback-Funktion, um die über den MQTT-Broker empfangenen Daten zu verarbeiten. Diese Callback-Funktion wird beim Broker registriert und ist dafür zuständig, auf eingehende Nachrichten zu reagieren.
 
 ```c++
 void mqtt_broker_callback(char *topic, byte *payload, unsigned int length) {
@@ -163,7 +167,9 @@ void mqtt_broker_callback(char *topic, byte *payload, unsigned int length) {
 }
 ```
 
-Zum Senden der Daten wird ein nebenläufiger Prozess verwendet.
+Für das Senden von Daten in unserem Projekt nutzen wir einen nebenläufigen Prozess, auch bekannt als Concurrent Process. Dieser Ansatz ermöglicht es, Daten unabhängig vom Hauptprozesslauf zu senden, was die Effizienz und Reaktionsfähigkeit unseres Systems erheblich verbessert.
+
+Der Prozess arbeitet parallel zum Hauptprozess und nutzt die Fähigkeiten des ESP32, mehrere Aufgaben gleichzeitig zu verwalten. Dies ist ein Schlüsselelement, um unser System zuverlässig und reaktionsschnell zu gestalten, insbesondere in einem IoT-Kontext, wo eine effiziente Kommunikation von entscheidender Bedeutung sein kann.
 
 ```c++
 [[noreturn]] void mqttPublishTask(void *pvParameters) {
