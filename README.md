@@ -209,8 +209,6 @@ Zusätzlich zu den Bash-Skripten haben wir systemd Services auf dem Raspberry Pi
 
 Durch die Verwendung von systemd Services konnten wir eine höhere Zuverlässigkeit und Effizienz erreichen. Diese Services gewährleisten, dass unsere Anwendung korrekt gestartet wird, sobald der Raspberry Pi hochfährt, und sicher heruntergefahren wird, wenn der Pi ausgeschaltet wird. Dies ist besonders wichtig, um die Integrität der Daten und die Stabilität des Systems zu gewährleisten, da es das Risiko von Datenverlust oder -korruption minimiert.
 
-Die Automatisierung durch systemd erleichtert zudem die Wartung des Systems erheblich, da sie manuelle Eingriffe reduziert und die Prozesssteuerung standardisiert. Dies ist ein wesentlicher Vorteil, besonders in einem Projektumfeld, wo Stabilität und Zuverlässigkeit entscheidend sind.
-
 ```ini
 [Unit]
 Description=Start Weather Station Docker Compose
