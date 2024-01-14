@@ -142,12 +142,13 @@ void mqtt_broker_callback(char *topic, byte *payload, unsigned int length) {
     char message[length + 1];
     strncpy(message, (char *) payload, length);
     message[length] = '\0';
-
-    Serial.print("Message arrived on topic: ");
-    Serial.print(topic);
-    Serial.print(". Message: ");
-    Serial.println(message);
-
+    if(debug_mode){
+        Serial.print("Message arrived on topic: ");
+        Serial.print(topic);
+        Serial.print(". Message: ");
+        Serial.println(message);
+    }
+    
     StaticJsonDocument<100> doc;
     DeserializationError error = deserializeJson(doc, message);
     if (error) {
