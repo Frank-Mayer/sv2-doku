@@ -13,15 +13,15 @@
 
 #### Layer 1
 
-![](./c4/01.png)
+<img src="./c4/01.png" width="40%">
 
 #### Layer 2
 
-![](./c4/02_frontend.png)
+<img src="./c4/02_frontend.png" width="40%">
 
-![](./c4/02_backend.png)
+<img src="./c4/02_backend.png" width="40%">
 
-![](./c4/02_sensors.png)
+<img src="./c4/02_sensors.png" width="40%">
 
 ## Datenbank
 
@@ -49,7 +49,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Mit dem Höhenanreißer Positionen für Bohrungen und Aussparungen auf dem Material präzise markieren.
      - Sorgfältige Markierung gewährleistet spätere Passgenauigkeit.
 
-![](./bearbeitung/pneumatik.jpg)
+<img src="./bearbeitung/pneumatik.jpg" width="40%">
 
 #### 2. Anfertigen der Aussparungen mit Pneumatikschleifer
    - **Zweck:** Erstellen der Aussparungen für Komponenten der Wetterstation.
@@ -58,7 +58,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Aussparungen gemäß den Anreißmarkierungen schleifen.
      - Kontinuierliche Überprüfung der Maße zur Sicherstellung der Passgenauigkeit.
        
-![](./bearbeitung/ausspar.jpg)
+<img src="./bearbeitung/ausspar.jpg" width="40%">
    
 #### 3. Bohren an Standbohrmaschine
    - **Zweck:** Erstellen präziser Bohrungen für die LED.
@@ -67,7 +67,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Material in die Standbohrmaschine einspannen.
      - Bohrungen an den markierten Stellen exakt durchführen.
 
-![](./bearbeitung/bohrer.jpg)
+<img src="./bearbeitung/bohrer.jpg" width="40%">
 
 #### 4. Entgraten der Kanten
    - **Zweck:** Glättung und Sicherheitsverbesserung der bearbeiteten Kanten.
@@ -84,5 +84,5 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Sicherstellen, dass der ESP nicht direkt auf dem Kunststoff aufliegt, um Überhitzungsrisiken zu minimieren.
      - Ausreichende Aushärtezeit des Klebstoffs gewährleisten.
     
-   ![](./bearbeitung/befestigung.jpg)
+   <img src="./bearbeitung/befestigung.jpg" width="40%">
 
