@@ -38,7 +38,7 @@ Die Wahl von GORM erwies sich als äußerst vorteilhaft, da es ein intuitives OR
 Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für die Speicherung und Verwaltung von Sensordaten, unterstützt durch die Zuverlässigkeit von Golang, die Leistungsfähigkeit von GORM und die Einfachheit von SQLite.
 
 
-# Arbeitsschritte zur Anfertigung des Gehäuses für unsere Wetterstation
+## Arbeitsschritte zur Anfertigung des Gehäuses für unsere Wetterstation
 
 ### Schritte zur Herstellung
 
