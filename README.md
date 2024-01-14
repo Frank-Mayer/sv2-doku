@@ -49,21 +49,25 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Mit dem Höhenanreißer Positionen für Bohrungen und Aussparungen auf dem Material präzise markieren.
      - Sorgfältige Markierung gewährleistet spätere Passgenauigkeit.
 
+![](./bearbeitung/pneumatik.jpg)
+
 #### 2. Anfertigen der Aussparungen mit Pneumatikschleifer
    - **Zweck:** Erstellen der Aussparungen für Komponenten der Wetterstation.
    - **Werkzeug:** Pneumatikschleifer.
    - **Verfahren:** 
      - Aussparungen gemäß den Anreißmarkierungen schleifen.
      - Kontinuierliche Überprüfung der Maße zur Sicherstellung der Passgenauigkeit.
-
-       ![](./bearbeitung/pneumatik.jpg)
-
+       
+![](./bearbeitung/ausspar.jpg)
+   
 #### 3. Bohren an Standbohrmaschine
    - **Zweck:** Erstellen präziser Bohrungen für die LED.
    - **Werkzeug:** Standbohrmaschine, entsprechender Bohrer.
    - **Verfahren:** 
      - Material in die Standbohrmaschine einspannen.
      - Bohrungen an den markierten Stellen exakt durchführen.
+
+![](./bearbeitung/bohrer.jpg)
 
 #### 4. Entgraten der Kanten
    - **Zweck:** Glättung und Sicherheitsverbesserung der bearbeiteten Kanten.
@@ -79,4 +83,6 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Abstandhalter an den vorgesehenen Positionen einkleben.
      - Sicherstellen, dass der ESP nicht direkt auf dem Kunststoff aufliegt, um Überhitzungsrisiken zu minimieren.
      - Ausreichende Aushärtezeit des Klebstoffs gewährleisten.
+    
+   ![](./bearbeitung/befestigung.jpg)
 
