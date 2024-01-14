@@ -39,7 +39,7 @@ Um die Anforderung zu erfüllen, einen Aktor repräsentativ über die Netzwerkve
 
 #### Probleme
 
-Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Aufgrund unserer begrenzten Erfahrung im Umgang mit dieser Art von Hardware waren wir anfangs nicht in der Lage, dies mit Sicherheit zu diagnostizieren. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
+Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
 
 <img src="./hardware/image-3.png" width="40%">
 
