@@ -56,7 +56,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Aussparungen gemäß den Anreißmarkierungen schleifen.
      - Kontinuierliche Überprüfung der Maße zur Sicherstellung der Passgenauigkeit.
 
-       ![](./bearbeitung/penumatik.png)
+       ![](./bearbeitung/penumatik.jpg)
 
 #### 3. Bohren an Standbohrmaschine
    - **Zweck:** Erstellen präziser Bohrungen für die LED.
