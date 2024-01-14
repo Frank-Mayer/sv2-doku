@@ -11,13 +11,17 @@
 
 ### C4 Modell
 
-![C4 Modell: Layer 1](./c4/01.png)
+#### Layer 1
 
-![C4 Modell: Layer 2 - Frontend](./c4/02_frontend.png)
+![](./c4/01.png)
 
-![C4 Modell: Layer 2 - Backend](./c4/02_backend.png)
+#### Layer 2
 
-![C4 Modell: Layer 2 - Sensors](./c4/02_sensors.png)
+![](./c4/02_frontend.png)
+
+![](./c4/02_backend.png)
+
+![](./c4/02_sensors.png)
 
 ## Datenbank
 
