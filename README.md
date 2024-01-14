@@ -194,9 +194,9 @@ Ist sleep_mode = true, so wird der ESP nach einmaligem Senden in deep sleep vers
 
 ### Server
 
-Da wir sowieso mit Docker als Umgebung für die Anwendungen (MQTT Broker, Webserver, etc.) planten, mussten wir beim Pi nur ein aktuelles Raspian Lite Image aufspielen und den WLAN-Zugang konfigurieren, sodass wir ihn per SSH bedienen konnten.
+Da wir uns entschieden hatten, Docker als Umgebung für unsere Anwendungen wie den MQTT-Broker, Webserver usw. zu verwenden, war die Einrichtung des Raspberry Pi vergleichsweise unkompliziert. Wir spielten lediglich ein aktuelles Raspbian Lite Image auf den Pi auf und konfigurierten den WLAN-Zugang. Dies ermöglichte es uns, den Raspberry Pi über SSH fernzusteuern, was die Handhabung erheblich vereinfachte.
 
-Wir klonten das Repository, erstellten bash-Skripte zum starten und beenden unserer Applikation.
+Nach der grundlegenden Konfiguration des Raspberry Pi gingen wir zum nächsten Schritt über: Wir klonten unser Repository auf den Pi. Um die Handhabung unserer Anwendung zu vereinfachen, erstellten wir Bash-Skripte, die das Starten und Beenden unserer Applikation automatisieren. Diese Skripte erleichterten die Verwaltung des Systems erheblich, da sie es uns ermöglichten, komplexe Abläufe mit einfachen Befehlen zu steuern. Dadurch konnten wir die Effizienz unserer Arbeitsabläufe verbessern und gleichzeitig potenzielle Fehlerquellen reduzieren, die bei manueller Ausführung auftreten könnten.
 
 ```bash
 #!/bin/bash
@@ -204,7 +204,12 @@ cd /home/sv2/weather-station/sv2/
 docker-compose up --build --detach
 ```
 
-Außerden erstellten wir systemd Services, sodass die Skripte beim Starten und Beenden des Pis ausgeführt werden.
+
+Zusätzlich zu den Bash-Skripten haben wir systemd Services auf dem Raspberry Pi eingerichtet, um die Verwaltung unserer Anwendung weiter zu optimieren. Diese systemd Services sind so konfiguriert, dass sie unsere Skripte automatisch beim Starten und Herunterfahren des Raspberry Pi ausführen.
+
+Durch die Verwendung von systemd Services konnten wir eine höhere Zuverlässigkeit und Effizienz erreichen. Diese Services gewährleisten, dass unsere Anwendung korrekt gestartet wird, sobald der Raspberry Pi hochfährt, und sicher heruntergefahren wird, wenn der Pi ausgeschaltet wird. Dies ist besonders wichtig, um die Integrität der Daten und die Stabilität des Systems zu gewährleisten, da es das Risiko von Datenverlust oder -korruption minimiert.
+
+Die Automatisierung durch systemd erleichtert zudem die Wartung des Systems erheblich, da sie manuelle Eingriffe reduziert und die Prozesssteuerung standardisiert. Dies ist ein wesentlicher Vorteil, besonders in einem Projektumfeld, wo Stabilität und Zuverlässigkeit entscheidend sind.
 
 ```ini
 [Unit]
