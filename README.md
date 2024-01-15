@@ -238,7 +238,6 @@ Die Wahl von GORM erwies sich als äußerst vorteilhaft, da es ein intuitives OR
 
 Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für die Speicherung und Verwaltung von Sensordaten, unterstützt durch die Zuverlässigkeit von Golang, die Leistungsfähigkeit von GORM und die Einfachheit von SQLite.
 
-
 ## Anfertigung des Gehäuses für unsere Wetterstation
 
 ### Schritte zur Herstellung
@@ -278,7 +277,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Gleichmäßige Bearbeitung zur Vermeidung von Materialschwächungen.
 
 #### 5. Befestigung für den ESP durch Einkleben von Abstandhaltern
-   - **Zweck:** Fester Halt für den ESP und Sicherstellung das Die CPU nicht auf Kunstoff aufliegt.
+   - **Zweck:** Fester Halt für den ESP und Sicherstellung das die CPU nicht auf Kunststoff aufliegt.
    - **Material:** Abstandhalter, Klebstoff.
    - **Verfahren:**
      - Abstandhalter an den vorgesehenen Positionen einkleben.
@@ -287,3 +286,36 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
     
    <img src="./bearbeitung/befestigung.jpg" width="40%">
 
+## Frontend Server
+
+### Dependencies
+
+- [github.com/Frank-Mayer/sv2-types](https://github.com/Frank-Mayer/sv2-types)
+- [github.com/charmbracelet/log](https://github.com/charmbracelet/log)
+- [github.com/eclipse/paho.mqtt.golang](https://github.com/eclipse/paho.mqtt.golang)
+- [google.golang.org/protobuf](https://google.golang.org/protobuf)
+
+
+### Allgemein
+
+Der Server ist in Go geschrieben und verwendet die Dependencies
+
+### Packages
+
+`mqtt` Stellt über die Init Funktion eine Verbindung zum MQTT Server her.
+Die `Sub` Funktion abonniert ein Topic und gibt einen Callback an,
+der Nachrichten verarbeitet.
+`Pub` sendet eine Nachricht an ein Topic.
+
+Das Paket, `rest` stellt eine Restful JSON API zur Verfügung.
+Dabei wird der HTTP-Server der Go-Standard-Bibliothek verwendet.
+
+Das Paket `webui` wird von rest verwendet und liefert eine Web UI.
+Diese wird aus einer HTML-Datei geladen.
+Diese verwendet die Rest-API, um die aktuellen Daten zu erhalten.
+Über einen Timer werden diese Daten alle 2 Sekunden aktualisiert.
+Die Anzeige erfolgt über die chart.js Bibliothek (https://www.chartjs.org).
+Die komplette Seide ist komplett in dieser einen HTML-Datei.
+
+`save` speichert eingehende Daten (vom MQTT Server) in memory und in einer SQLite Datenbank.
+Beim Start des Programms werden aus dieser SQLite Datenbank die alten Daten geladen.
