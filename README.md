@@ -368,6 +368,8 @@ SQLite.
 
 Der Server ist in Go geschrieben.
 
+Zur Kommunikation über MQTT kann JSON oder Protobuf verwendet werden.
+
 ### Dependencies
 
 - [github.com/Frank-Mayer/sv2-types](https://github.com/Frank-Mayer/sv2-types)
@@ -397,3 +399,33 @@ Die komplette Seide ist komplett in dieser einen HTML-Datei.
 
 `save` speichert eingehende Daten (vom MQTT Server) in memory und in einer SQLite Datenbank.
 Beim Start des Programms werden aus dieser SQLite Datenbank die alten Daten geladen.
+
+### Beispiele
+
+Verwendung der `mqtt.Sub` Funktion um eine Nachricht zu empfangen.
+
+```Go
+mqtt.Sub("sensordata", func(data []byte) {
+     msg := sv2_types.SensorData{}
+     // try protobuf
+     if err := proto.Unmarshal(data, &msg); err != nil {
+         // try json
+         if err := json.Unmarshal(data, &msg); err != nil {
+             log.Error("failed to unmarshal message", "error", err, "data", data)
+         }
+     }
+     log.Debug(
+         "received message",
+         "Name", msg.Name,
+         "Value", msg.Value,
+         "Unit", msg.Unit,
+     )
+     save.Add(msg.Name, msg.Value, msg.Unit)
+})
+```
+
+Verwendung der `mqtt.Pub` Funktion um eine Nachricht zu senden.
+
+```Go
+mqtt.Pub("led", []byte("{\"command\":\""+on+"\"}"))
+```
