@@ -494,3 +494,7 @@ Beispieldaten von `/sensor/Temperature`
   ]
 }
 ```
+
+Web Dashboard
+
+<img src="web/Screenshot.png" width="75%">
