@@ -394,6 +394,9 @@ der Nachrichten verarbeitet.
 Das Paket, `rest` stellt eine Restful JSON API zur Verfügung.
 Dabei wird der HTTP-Server der Go-Standard-Bibliothek verwendet.
 
+Alle Sensoren sind unter `/sensor` einsehbar.
+Die Daten eines einzelnen Sensors sind unter `/sensor/{name}` einsehbar.
+
 Das Paket `webui` wird von rest verwendet und liefert eine Web UI.
 Diese wird aus einer HTML-Datei geladen.
 Diese verwendet die Rest-API, um die aktuellen Daten zu erhalten.
@@ -432,4 +435,62 @@ Verwendung der `mqtt.Pub` Funktion um eine Nachricht zu senden.
 
 ```Go
 mqtt.Pub("led", []byte("{\"command\":\""+on+"\"}"))
+```
+
+Beispieldaten von `/sensor`
+
+```json
+{
+  "sensors": [
+    {
+      "name": "Temperature",
+      "unit": "°C",
+      "data": [
+        {
+          "value": 18.1,
+          "time": 1705313038
+        },
+        {
+          "value": 18.2,
+          "time": 1705313039
+        },
+        {
+          "value": 18.2,
+          "time": 1705313040
+        },
+        {
+          "value": 18.1,
+          "time": 1705313041
+        }
+      ]
+    }
+  ]
+}
+```
+
+Beispieldaten von `/sensor/Temperature`
+
+```json
+{
+  "name": "Temperature",
+  "unit": "°C",
+  "data": [
+    {
+      "value": 18.1,
+      "time": 1705313038
+    },
+    {
+      "value": 18.2,
+      "time": 1705313039
+    },
+    {
+      "value": 18.2,
+      "time": 1705313040
+    },
+    {
+      "value": 18.1,
+      "time": 1705313041
+    }
+  ]
+}
 ```
