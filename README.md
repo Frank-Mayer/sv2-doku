@@ -39,7 +39,7 @@ Um die Anforderung zu erfüllen, einen Aktor repräsentativ über die Netzwerkve
 
 #### Probleme
 
-Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Aufgrund unserer begrenzten Erfahrung im Umgang mit dieser Art von Hardware waren wir anfangs nicht in der Lage, dies mit Sicherheit zu diagnostizieren. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
+Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
 
 <img src="./hardware/image-3.png" width="40%">
 
@@ -84,9 +84,9 @@ lib_deps =
 Konfiguration
 
 ```c++
-const char *ssid = "Toilet Cam";
-const char *password = "!234Amsterdam";
-const char *mqtt_server = "192.168.2.114";
+const char *ssid = "Your SSID";
+const char *password = "Your Password";
+const char *mqtt_server = "Your MQTT Broker IP";
 const int mqtt_port = 1883;
 const char *mqtt_topic_publish = "sensordata";
 const char *mqtt_topic_subscribe = "led";
@@ -209,8 +209,6 @@ Zusätzlich zu den Bash-Skripten haben wir systemd Services auf dem Raspberry Pi
 
 Durch die Verwendung von systemd Services konnten wir eine höhere Zuverlässigkeit und Effizienz erreichen. Diese Services gewährleisten, dass unsere Anwendung korrekt gestartet wird, sobald der Raspberry Pi hochfährt, und sicher heruntergefahren wird, wenn der Pi ausgeschaltet wird. Dies ist besonders wichtig, um die Integrität der Daten und die Stabilität des Systems zu gewährleisten, da es das Risiko von Datenverlust oder -korruption minimiert.
 
-Die Automatisierung durch systemd erleichtert zudem die Wartung des Systems erheblich, da sie manuelle Eingriffe reduziert und die Prozesssteuerung standardisiert. Dies ist ein wesentlicher Vorteil, besonders in einem Projektumfeld, wo Stabilität und Zuverlässigkeit entscheidend sind.
-
 ```ini
 [Unit]
 Description=Start Weather Station Docker Compose
@@ -245,6 +243,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
 ### Schritte zur Herstellung
 
 #### 1. Anreißen der Bohrung und der Aussparungen
+
    - **Zweck:** Markierung der Positionen für Bohrungen und Aussparungen.
    - **Werkzeug:** Höhenanreißer.
    - **Verfahren:** 
@@ -254,6 +253,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
 <img src="./bearbeitung/pneumatik.jpg" width="40%">
 
 #### 2. Anfertigen der Aussparungen mit Pneumatikschleifer
+
    - **Zweck:** Erstellen der Aussparungen für Komponenten der Wetterstation.
    - **Werkzeug:** Pneumatikschleifer.
    - **Verfahren:** 
@@ -272,6 +272,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
 <img src="./bearbeitung/bohrer.jpg" width="40%">
 
 #### 4. Entgraten der Kanten
+
    - **Zweck:** Glättung und Sicherheitsverbesserung der bearbeiteten Kanten.
    - **Werkzeug:** Entgratwerkzeug, Feile.
    - **Verfahren:** 
@@ -279,6 +280,7 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
      - Gleichmäßige Bearbeitung zur Vermeidung von Materialschwächungen.
 
 #### 5. Befestigung für den ESP durch Einkleben von Abstandhaltern
+
    - **Zweck:** Fester Halt für den ESP und Sicherstellung das Die CPU nicht auf Kunstoff aufliegt.
    - **Material:** Abstandhalter, Klebstoff.
    - **Verfahren:**
@@ -288,3 +290,8 @@ Insgesamt bietet die implementierte Datenbanklösung eine stabile Grundlage für
     
    <img src="./bearbeitung/befestigung.jpg" width="40%">
 
+## Zusammenfügen der Außenstation
+
+Wir fertigten Gehäuse und Schaltung getrennt voneinander an und fügten anschließend alles zusammen.
+
+<img src="./hardware/image-6.png" width="40%">
