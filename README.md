@@ -154,7 +154,7 @@ void loop() {
         reconnect();
     }
     client.loop();
-    delay(250);
+    delay(loop_delay);
 }
 ```
 
