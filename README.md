@@ -368,6 +368,10 @@ SQLite.
 
 Der Server ist in Go geschrieben.
 
+Der Code ist hier verfügbar: https://github.com/Frank-Mayer/sv2
+
+Die Typdefinitionen für Protobuf sind hier verfügbar: https://github.com/Frank-Mayer/sv2-types
+
 Zur Kommunikation über MQTT kann JSON oder Protobuf verwendet werden.
 
 ### Dependencies
