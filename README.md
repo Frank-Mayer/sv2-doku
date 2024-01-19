@@ -40,7 +40,7 @@ In der Anfangsphase unseres Projekts planten wir den Einsatz verschiedener Senso
 Laufe der Entwicklung mussten wir jedoch Anpassungen vornehmen und uns auf eine Auswahl an Sensoren beschränken, die
 unseren Anforderungen am besten entsprachen.
 
-<img src="./hardware/image.png" width="40%">
+<img src="./hardware/image.jpeg" width="40%">
 
 Um die Anforderung zu erfüllen, einen Aktor repräsentativ über die Netzwerkverbindung steuern zu können, entschieden wir
 uns für eine einfache und effektive Lösung: die Verwendung einer LED. Die LED dient als idealer Demonstrator für die
@@ -52,7 +52,7 @@ kostenintensive Aktorik zurückgreifen zu müssen.
 
 Wir stießen auf ein unerwartetes Problem: Der Sensor, den wir als Ersatz erhalten hatten, erwies sich leider als defekt. Aufgrund unserer begrenzten Erfahrung im Umgang mit dieser Art von Hardware waren wir anfangs nicht in der Lage, dies mit Sicherheit zu diagnostizieren. Ein deutliches Indiz für das Problem war, dass unsere I²C Scanner-Skripte, die auf dem ESP ausgeführt wurden, den Sensor nicht erkennen konnten. Dies war ein Rückschlag für unser Projekt, da wir dadurch Zeit verloren und gezwungen waren, unsere Herangehensweise zu überdenken und nach Alternativlösungen zu suchen.
 
-<img src="./hardware/image-3.png" width="40%">
+<img src="./hardware/image-3.jpeg" width="40%">
 
 Nachdem wir auf das Problem mit dem defekten Sensor gestoßen waren, informierten wir umgehend unseren Betreuer über die
 Situation. Um das Projekt weiterhin erfolgreich voranzutreiben, schlugen wir eine alternative Lösung vor: den Einsatz
@@ -60,7 +60,7 @@ eines DHT22-Sensors, den ein Mitglied unseres Teams zu Hause hatte. Dieser Senso
 der Messung von Temperatur und Luftfeuchtigkeit, schien eine praktikable und unkomplizierte Alternative zu sein, die es
 uns ermöglichen würde, das Projekt ohne größere Verzögerungen fortzusetzen.
 
-<img src="./hardware/image-2.png" width="40%">
+<img src="./hardware/image-2.jpeg" width="40%">
 
 ### Außenstation
 
@@ -71,7 +71,7 @@ auch die Wartung und mögliche Fehlerbehebung vereinfachen. Durch die Konzentrat
 zuverlässigen DHT22-Sensor und die effektive Nutzung des ESP32 konnten wir ein schlankes, aber leistungsfähiges System
 entwickeln, das optimal für den vorgesehenen Einsatz im Freien geeignet ist.
 
-<img src="./hardware/image-1.png" width="40%">
+<img src="./hardware/image-1.jpeg" width="40%">
 
 Im nächsten Schritt bauten wir einen Prototyp unserer Außenstation. Bevor wir mit der Einrichtung und Konfiguration des
 Raspberry Pis begannen, entschieden wir uns dafür, den Prototyp gegen einen Mosquitto MQTT Broker in einem
@@ -85,13 +85,13 @@ der Aktoren über das Netzwerk. Erst nach erfolgreichen Tests und der Gewährlei
 funktionierte, gingen wir zur nächsten Phase über – der Einrichtung und Konfiguration des Raspberry Pi für den
 Echtbetrieb.
 
-<img src="./hardware/image-4.png" width="40%">
+<img src="./hardware/image-4.jpeg" width="40%">
 
 Nachdem wir erfolgreich bestätigt hatten, dass unser Prototyp wie vorgesehen funktionierte, gingen wir zur nächsten
 Phase über: dem Löten der Komponenten. Diese Entscheidung folgte dem Ziel, eine robuste und zuverlässige Einheit zu
 schaffen, die sich einfach in unser selbstgebautes Gehäuse integrieren lässt.
 
-<img src="./hardware/image-5.png" width="40%">
+<img src="./hardware/image-5.jpeg" width="40%">
 
 #### Code
 
@@ -362,7 +362,7 @@ SQLite.
 
 Wir fertigten Gehäuse und Schaltung getrennt voneinander an und fügten anschließend alles zusammen.
 
-<img src="./hardware/image-6.png" width="40%">
+<img src="./hardware/image-6.jpeg" width="40%">
 
 ## Frontend Server
 
